@@ -252,7 +252,11 @@ def get_images(reco_titres):
         reco_images.append(images[idx])
     return reco_images
 
+@st.cache(allow_output_mutation=True)
+def count_button():
+    a=0
 
+a=count_button()
 option = st.sidebar.selectbox(
     'Quel WebToon ? ',
     titres
@@ -268,7 +272,6 @@ titres_without_weights = df_without_weights['Titre similaire'].tolist()
 relevances_without_weights = df_without_weights['relevance'].tolist()
 images_without_weights = get_images(titres_without_weights)
 
-a = 0
 "WebToon choisi : "
 
 col1, col2, col3, col4, col5 = st.columns(5)
