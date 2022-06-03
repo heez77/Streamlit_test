@@ -2,15 +2,12 @@ import s3fs
 import pandas as pd
 import numpy as np
 import streamlit as st
-from pathlib import Path
 from sklearn.metrics.pairwise import cosine_similarity
 import unicodedata
 from PIL import Image
 import math
-import base64
 from nltk.corpus import stopwords
 import nltk
-from neo4j import GraphDatabase
 import unicodedata
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
