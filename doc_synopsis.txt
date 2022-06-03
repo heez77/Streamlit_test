@@ -13,10 +13,10 @@ Une liste de mots français inutiles est disponible et est utilisée pour suppri
 <p>
 Exemple :<br>
 Le synopsis de Dofus Manga est :<br>
-**
-Arty est un jeune berger Féca. Il vit avec son grand-père Crail dans une région reculée d’Amakna. Séparé de son grand-père, Arty se voit confier une mission capitale : stopper le maléfice qui frappe les gelées de la forêt des Katrepat. Le terrible sortilège de « l’amour » les contraint à se multiplier sans cesse, au risque de recouvrir toute la surface de la province d’Amakna. C’est une lourde tâche pour un jeune garçon. Heureusement, il pourra compter sur l’aide de compagnons qu’il rencontrera en cours de route.**<br>
+<em>
+Arty est un jeune berger Féca. Il vit avec son grand-père Crail dans une région reculée d’Amakna. Séparé de son grand-père, Arty se voit confier une mission capitale : stopper le maléfice qui frappe les gelées de la forêt des Katrepat. Le terrible sortilège de « l’amour » les contraint à se multiplier sans cesse, au risque de recouvrir toute la surface de la province d’Amakna. C’est une lourde tâche pour un jeune garçon. Heureusement, il pourra compter sur l’aide de compagnons qu’il rencontrera en cours de route.</em><br>
 On obtient, après les différentes opérations de traitement, le texte suivant : <br>
-arty jeune berger feca vit grand-pere crail region reculee ’ amakna separe grand-pere arty voit confier mission capitale stopper malefice frappe gelees foret katrepat terrible sortilege « ’ amour » contraint multiplier sans cesse risque recouvrir toute surface province ’ amakna ’ lourde tache jeune garcon heureusement pourra compter ’ aide compagnons ’ rencontrera cours route
+<em>arty jeune berger feca vit grand-pere crail region reculee ’ amakna separe grand-pere arty voit confier mission capitale stopper malefice frappe gelees foret katrepat terrible sortilege « ’ amour » contraint multiplier sans cesse risque recouvrir toute surface province ’ amakna ’ lourde tache jeune garcon heureusement pourra compter ’ aide compagnons ’ rencontrera cours route<em>
 
 Il ne reste plus qu’a mettre le résultat sous forme mathématique. Pour cela, on fait un référencement de tous les mots existant dans l’ensemble des synopsis. Cette liste de tous les mots correspond au vocabulaire disponible.
 Il suffit ensuite de compter le nombre d’occurrence de chaque mot du vocabulaire dans le synopsis à convertir et de mettre ce résultat dans un vecteur.
