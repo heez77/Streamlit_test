@@ -196,7 +196,7 @@ def create_df_similarity_parcours(df_univers_support, df_genres, df_artistes, df
         return df_res
 
 
-@st.cache
+@st.cache(allow_output_mutation=True)
 def read_file(filename):
     with fs.open(f"systeme-recommandation/Data/{filename}") as f:
         return pd.read_csv(f)
@@ -225,6 +225,7 @@ df_similarity_synopsis = create_df_similarity_synopsis(df_synopsis, 'mots_cles')
 
 titres = df2['Titre'].tolist()
 
+@st.cache(allow_output_mutation=True)
 def load_img():
     images = []
     for titre in titres:
