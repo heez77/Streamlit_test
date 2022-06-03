@@ -291,9 +291,9 @@ with st.expander("Recommandation à partir du Synopsis"):
     with col5:
         st.image(images_synopsis[4], caption = f"{titres_synopsis[4]}, Relevance : {truncate(relevances_synopsis[4])}")
 
-    with st.expander("Documentation recommandation à partir du Synopsis"):
-        text = """
-        Ce système de recommandation se base sur les synopsis de chaque Webtoon. L’objectif pour un WebToon donné, est de trouver les œuvres ayant le synopsis le plus proche de celui de base.
+with st.expander("Documentation recommandation à partir du Synopsis"):
+    text = """
+    Ce système de recommandation se base sur les synopsis de chaque Webtoon. L’objectif pour un WebToon donné, est de trouver les œuvres ayant le synopsis le plus proche de celui de base.
 
 Principe de fonctionnement : 
 Pour pouvoir comparer les synopsis, il faut d’abord réussir à convertir le texte sous une forme mathématique qui permettrait de faire des comparaisons.
@@ -333,10 +333,10 @@ Cette méthode est un bon moyen de classifier des textes génériques (utilisati
 Dans notre cas, les synopsis contiennent beaucoup de mots spécifiques à l’univers d’Ankama, il n’y a pas de thématiques générales et il est très difficile de trouver de réelles similarités dans les textes.
 
 Au-delà de ça, cette méthode reste limitée car ne considère pas comme identique les différentes variations d’un même mot. 
-        """
-        st.markdown(text)
+    """
+    st.markdown(text)
 
-        
+
 with st.expander("Recommandation à partir du Thesaurus"):
     if st.checkbox('Sans poids'):
         col1, col2, col3, col4, col5 = st.columns(5)
