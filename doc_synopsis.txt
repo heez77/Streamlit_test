@@ -2,8 +2,9 @@
 <p>
 Ce système de recommandation se base sur les synopsis de chaque Webtoon. L’objectif pour un WebToon donné, est de trouver les œuvres ayant le synopsis le plus proche de celui de base.
 </p>
+
+<h1>Principe de fonctionnement : </h1>
 <p>
-Principe de fonctionnement : <br>
 Pour pouvoir comparer les synopsis, il faut d’abord réussir à convertir le texte sous une forme mathématique qui permettrait de faire des comparaisons.
 Tout d’abord, comme il peut y avoir des petites erreurs dans le texte (notamment des accents), on commence par supprimer tous les caractères spéciaux et toutes les majuscules.
 Ensuite, il faut réussir à enlever tout le contenu du texte qui ne donne aucune information pertinente pour le système de recommandation, par exemple les connecteurs logiques.
@@ -22,7 +23,7 @@ Le vecteur final fait la taille du vocabulaire et pour un mot se trouvant en pos
 </p>
 <p>
 Exemple : <br>
-
+<br>
 Prenons trois textes :<br>
 <ul>
 <li>Texte_1 = « pere mange pomme »</li>
@@ -32,6 +33,7 @@ Prenons trois textes :<br>
 </p>
 <p>
 Notre vocabulaire est : [pere, mere, mange, pomme, banane, achete]<br>
+<br>
 Le texte 1 contient 1 fois les mots père, mange et pomme et ne contient pas les mots banane, mere, achete<br>
 On obtient le vecteur suivant vecteur_texte_1 = <1,0,1,1,0,0><br>
 Pour les autres textes, on obtient :<br>
@@ -42,12 +44,14 @@ Pour les autres textes, on obtient :<br>
 </ul>
 <p>
 Et voilà, nous avons convertit nos textes sous une forme mathématique !<br>
+<br>
 Maintenant, il ne reste plus qu’à étudier la similarité entre les textes. Pour cela, nous allons utiliser la similarité cosinus. Concrètement, nous allons calculer la valeur de l’angle entre les vecteurs représentant deux textes.
-La valeur que nous pouvons obtenir est situé entre 0 et 1, où 1 indique des vecteurs identiques et 0 des vecteurs opposés. Pour plus de détail : <a href="https://kanoki.org/2018/12/27/text-matching-cosine-similarity">Cosine Similarity/</a><br>
+La valeur que nous pouvons obtenir est situé entre 0 et 1, où 1 indique des vecteurs identiques et 0 des vecteurs opposés. Pour plus de détail : <a href="https://kanoki.org/2018/12/27/text-matching-cosine-similarity">Cosine Similarity</a><br>
 Ainsi, pour un texte donné, il suffit de récupérer les autres textes qui ont une similarité la plus proche de 1 possible pour obtenir les textes les plus similaires.
 </p>
+
+<h1>Limites de cette méthode :</h1>
 <p>
-Limites de cette méthode :<br>
 Cette méthode est un bon moyen de classifier des textes génériques (utilisation de termes communs) où le corpus contient des textes parlant de sujets très différents (exemple : Des textes qui parlent de foot et d’autres qui parlent de musique)
 <br>
 Dans notre cas, les synopsis contiennent beaucoup de mots spécifiques à l’univers d’Ankama, il n’y a pas de thématiques générales et il est très difficile de trouver de réelles similarités dans les textes.
