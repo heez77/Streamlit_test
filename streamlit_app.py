@@ -277,38 +277,38 @@ with col3:
 with st.expander("Recommandation à partir du Synopsis"):
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
-        st.image(images_synopsis[0],width=120,use_column_width='never', caption = f"{titres_synopsis[0]}, Relevance : {truncate(relevances_synopsis[0])}")
+        st.image(images_synopsis[0], caption = f"{titres_synopsis[0]}, Relevance : {truncate(relevances_synopsis[0])}")
     
     with col2:
-        st.image(images_synopsis[1],width=120,use_column_width='never', caption = f"{titres_synopsis[1]}, Relevance : {truncate(relevances_synopsis[1])}")
+        st.image(images_synopsis[1], caption = f"{titres_synopsis[1]}, Relevance : {truncate(relevances_synopsis[1])}")
     
     with col3:
-        st.image(images_synopsis[2],width=120,use_column_width='never', caption = f"{titres_synopsis[2]}, Relevance : {truncate(relevances_synopsis[2])}")
+        st.image(images_synopsis[2], caption = f"{titres_synopsis[2]}, Relevance : {truncate(relevances_synopsis[2])}")
     
     with col4:
-        st.image(images_synopsis[3],width=120,use_column_width='never', caption = f"{titres_synopsis[3]}, Relevance : {truncate(relevances_synopsis[3])}")
+        st.image(images_synopsis[3], caption = f"{titres_synopsis[3]}, Relevance : {truncate(relevances_synopsis[3])}")
 
     with col5:
-        st.image(images_synopsis[4],width=120,use_column_width='never', caption = f"{titres_synopsis[4]}, Relevance : {truncate(relevances_synopsis[4])}")
+        st.image(images_synopsis[4], caption = f"{titres_synopsis[4]}, Relevance : {truncate(relevances_synopsis[4])}")
 
 
 with st.expander("Recommandation à partir du Thesaurus"):
     if st.checkbox('Sans poids'):
         col1, col2, col3, col4, col5 = st.columns(5)
         with col1:
-            st.image(images_without_weights[0],width=120,use_column_width='never', caption = f"{titres_without_weights[0]}, Relevance : {truncate(relevances_without_weights[0])}")
+            st.image(images_without_weights[0], caption = f"{titres_without_weights[0]}, Relevance : {truncate(relevances_without_weights[0])}")
         
         with col2:
-            st.image(images_without_weights[1],width=120,use_column_width='never', caption = f"{titres_without_weights[1]}, Relevance : {truncate(relevances_without_weights[1])}")
+            st.image(images_without_weights[1], caption = f"{titres_without_weights[1]}, Relevance : {truncate(relevances_without_weights[1])}")
         
         with col3:
-            st.image(images_without_weights[2],width=120,use_column_width='never', caption = f"{titres_without_weights[2]}, Relevance : {truncate(relevances_without_weights[2])}")
+            st.image(images_without_weights[2], caption = f"{titres_without_weights[2]}, Relevance : {truncate(relevances_without_weights[2])}")
         
         with col4:
-            st.image(images_without_weights[3],width=120,use_column_width='never', caption = f"{titres_without_weights[3]}, Relevance : {truncate(relevances_without_weights[3])}")
+            st.image(images_without_weights[3], caption = f"{titres_without_weights[3]}, Relevance : {truncate(relevances_without_weights[3])}")
 
         with col5:
-            st.image(images_without_weights[4],width=120,use_column_width='never', caption = f"{titres_without_weights[4]}, Relevance : {truncate(relevances_without_weights[4])}")
+            st.image(images_without_weights[4], caption = f"{titres_without_weights[4]}, Relevance : {truncate(relevances_without_weights[4])}")
     else:
         pass
 
@@ -340,19 +340,19 @@ with st.expander("Recommandation à partir du Thesaurus"):
                     images_with_weights = get_images(titres_with_weights)
 
                     with col1:
-                        st.image(images_with_weights[0],width=120,use_column_width='never', caption = f"{titres_with_weights[0]}, Relevance : {truncate(relevances_with_weights[0])}")
+                        st.image(images_with_weights[0], caption = f"{titres_with_weights[0]}, Relevance : {truncate(relevances_with_weights[0])}")
                     
                     with col2:
-                        st.image(images_with_weights[1],width=120,use_column_width='never', caption = f"{titres_with_weights[1]}, Relevance : {truncate(relevances_with_weights[1])}")
+                        st.image(images_with_weights[1], caption = f"{titres_with_weights[1]}, Relevance : {truncate(relevances_with_weights[1])}")
                     
                     with col3:
-                        st.image(images_with_weights[2],width=120,use_column_width='never', caption = f"{titres_with_weights[2]}, Relevance : {truncate(relevances_with_weights[2])}")
+                        st.image(images_with_weights[2], caption = f"{titres_with_weights[2]}, Relevance : {truncate(relevances_with_weights[2])}")
                     
                     with col4:
-                        st.image(images_with_weights[3],width=120,use_column_width='never', caption = f"{titres_with_weights[3]}, Relevance : {truncate(relevances_with_weights[3])}")
+                        st.image(images_with_weights[3], caption = f"{titres_with_weights[3]}, Relevance : {truncate(relevances_with_weights[3])}")
 
                     with col5:
-                        st.image(images_with_weights[4],width=120,use_column_width='never', caption = f"{titres_with_weights[4]}, Relevance : {truncate(relevances_with_weights[4])}")
+                        st.image(images_with_weights[4], caption = f"{titres_with_weights[4]}, Relevance : {truncate(relevances_with_weights[4])}")
             else:
                 pass
     else:
@@ -387,19 +387,19 @@ with st.expander("Recommandation à partir d'un profil utilisateur"):
                 images_parcours = get_images(titres_parcours)
 
                 with col1:
-                    st.image(images_parcours[0],width=120,use_column_width='never', caption = f"{titres_parcours[0]}, Relevance : {truncate(relevances_parcours[0])}")
+                    st.image(images_parcours[0], caption = f"{titres_parcours[0]}, Relevance : {truncate(relevances_parcours[0])}")
                 
                 with col2:
-                    st.image(images_parcours[1],width=120,use_column_width='never', caption = f"{titres_parcours[1]}, Relevance : {truncate(relevances_parcours[1])}")
+                    st.image(images_parcours[1], caption = f"{titres_parcours[1]}, Relevance : {truncate(relevances_parcours[1])}")
                 
                 with col3:
-                    st.image(images_parcours[2],width=120,use_column_width='never', caption = f"{titres_parcours[2]}, Relevance : {truncate(relevances_parcours[2])}")
+                    st.image(images_parcours[2], caption = f"{titres_parcours[2]}, Relevance : {truncate(relevances_parcours[2])}")
                 
                 with col4:
-                    st.image(images_parcours[3],width=120,use_column_width='never', caption = f"{titres_parcours[3]}, Relevance : {truncate(relevances_parcours[3])}")
+                    st.image(images_parcours[3], caption = f"{titres_parcours[3]}, Relevance : {truncate(relevances_parcours[3])}")
 
                 with col5:
-                    st.image(images_parcours[4],width=120,use_column_width='never', caption = f"{titres_parcours[4]}, Relevance : {truncate(relevances_parcours[4])}")
+                    st.image(images_parcours[4], caption = f"{titres_parcours[4]}, Relevance : {truncate(relevances_parcours[4])}")
 
 
 
