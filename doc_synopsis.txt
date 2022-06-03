@@ -29,14 +29,18 @@ Prenons trois textes :<br>
 <li>Texte_2 = « mere mange banane »</li>
 <li>Texte_3 = « pere achete banane »</li>
 </ul>
+</p>
+<p>
 Notre vocabulaire est : [pere, mere, mange, pomme, banane, achete]<br>
 Le texte 1 contient 1 fois les mots père, mange et pomme et ne contient pas les mots banane, mere, achete<br>
 On obtient le vecteur suivant vecteur_texte_1 = <1,0,1,1,0,0><br>
 Pour les autres textes, on obtient :<br>
+</p>
 <ul>
 <li>Vecteur_texte_2 = <0,1,1,0,1,0></li>
 <li>Vecteur_texte_3 = <1,0,0,0,1,1></li>
 </ul>
+<p>
 Et voilà, nous avons convertit nos textes sous une forme mathématique !<br>
 Maintenant, il ne reste plus qu’à étudier la similarité entre les textes. Pour cela, nous allons utiliser la similarité cosinus. Concrètement, nous allons calculer la valeur de l’angle entre les vecteurs représentant deux textes.
 La valeur que nous pouvons obtenir est situé entre 0 et 1, où 1 indique des vecteurs identiques et 0 des vecteurs opposés. Pour plus de détail : [Cosine similarity]( https://kanoki.org/2018/12/27/text-matching-cosine-similarity/)<br>
