@@ -1,0 +1,40 @@
+Ce système de recommandation se base sur les synopsis de chaque Webtoon. L’objectif pour un WebToon donné, est de trouver les œuvres ayant le synopsis le plus proche de celui de base.
+
+Principe de fonctionnement : 
+Pour pouvoir comparer les synopsis, il faut d’abord réussir à convertir le texte sous une forme mathématique qui permettrait de faire des comparaisons.
+Tout d’abord, comme il peut y avoir des petites erreurs dans le texte (notamment des accents), on commence par supprimer tous les caractères spéciaux et toutes les majuscules.
+Ensuite, il faut réussir à enlever tout le contenu du texte qui ne donne aucune information pertinente pour le système de recommandation, par exemple les connecteurs logiques.
+Une liste de mots français inutiles est disponible et est utilisée pour supprimer le superflu. 
+
+Exemple :
+Le synopsis de Dofus Manga est : Arty est un jeune berger Féca. Il vit avec son grand-père Crail dans une région reculée d’Amakna. Séparé de son grand-père, Arty se voit confier une mission capitale : stopper le maléfice qui frappe les gelées de la forêt des Katrepat. Le terrible sortilège de « l’amour » les contraint à se multiplier sans cesse, au risque de recouvrir toute la surface de la province d’Amakna. C’est une lourde tâche pour un jeune garçon. Heureusement, il pourra compter sur l’aide de compagnons qu’il rencontrera en cours de route.
+On obtient, après les différentes opérations de traitement, le texte suivant : 
+arty jeune berger feca vit grand-pere crail region reculee ’ amakna separe grand-pere arty voit confier mission capitale stopper malefice frappe gelees foret katrepat terrible sortilege « ’ amour » contraint multiplier sans cesse risque recouvrir toute surface province ’ amakna ’ lourde tache jeune garcon heureusement pourra compter ’ aide compagnons ’ rencontrera cours route
+
+Il ne reste plus qu’a mettre le résultat sous forme mathématique. Pour cela, on fait un référencement de tous les mots existant dans l’ensemble des synopsis. Cette liste de tous les mots correspond au vocabulaire disponible.
+Il suffit ensuite de compter le nombre d’occurrence de chaque mot du vocabulaire dans le synopsis à convertir et de mettre ce résultat dans un vecteur.
+Le vecteur final fait la taille du vocabulaire et pour un mot se trouvant en position i du vocabulaire, la valeur du vecteur en position i est le nombre d’occurrence du mot dans le texte.
+
+Exemple : 
+
+Prenons trois textes :
+Texte_1 = « pere mange pomme » 
+Texte_2 = « mere mange banane » 
+Texte_3 = « pere achete banane » 
+Notre vocabulaire est : [pere, mere, mange, pomme, banane, achete]
+Le texte 1 contient 1 fois les mots père, mange et pomme et ne contient pas les mots banane, mere, achete
+On obtient le vecteur suivant vecteur_texte_1 = <1,0,1,1,0,0>
+Pour les autres textes, on obtient :
+Vecteur_texte_2 = <0,1,1,0,1,0>
+Vecteur_texte_3 = <1,0,0,0,1,1>
+Et voilà, nous avons convertit nos textes sous une forme mathématique !
+Maintenant, il ne reste plus qu’à étudier la similarité entre les textes. Pour cela, nous allons utiliser la similarité cosinus. Concrètement, nous allons calculer la valeur de l’angle entre les vecteurs représentant deux textes.
+La valeur que nous pouvons obtenir est situé entre 0 et 1, où 1 indique des vecteurs identiques et 0 des vecteurs opposés. Pour plus de détail : [Cosine similarity]( https://kanoki.org/2018/12/27/text-matching-cosine-similarity/)
+Ainsi, pour un texte donné, il suffit de récupérer les autres textes qui ont une similarité la plus proche de 1 possible pour obtenir les textes les plus similaires.
+
+Limites de cette méthode :
+Cette méthode est un bon moyen de classifier des textes génériques (utilisation de termes communs) où le corpus contient des textes parlant de sujets très différents (exemple : Des textes qui parlent de foot et d’autres qui parlent de musique)
+
+Dans notre cas, les synopsis contiennent beaucoup de mots spécifiques à l’univers d’Ankama, il n’y a pas de thématiques générales et il est très difficile de trouver de réelles similarités dans les textes.
+
+Au-delà de ça, cette méthode reste limitée car ne considère pas comme identique les différentes variations d’un même mot. 
