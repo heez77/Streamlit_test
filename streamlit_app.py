@@ -271,7 +271,7 @@ images_without_weights = get_images(titres_without_weights)
 col1, col2, col3, col4, col5 = st.columns(5)
 
 with col3:
-    st.image(images[titres.index(option)], caption = option, width=120)
+    st.image(images[titres.index(option)], caption = option)
 
 
 with st.expander("Recommandation à partir du Synopsis"):
