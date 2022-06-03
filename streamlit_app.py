@@ -252,12 +252,6 @@ def get_images(reco_titres):
         reco_images.append(images[idx])
     return reco_images
 
-@st.cache(allow_output_mutation=True)
-def count_button():
-    a=0
-    return a
-
-a=count_button()
 option = st.sidebar.selectbox(
     'Quel WebToon ? ',
     titres
@@ -297,12 +291,8 @@ with st.expander("Recommandation à partir du Synopsis"):
 
     with col5:
         st.image(images_synopsis[4], caption = f"{titres_synopsis[4]}, Relevance : {truncate(relevances_synopsis[4])}")
-    if st.button("+ d'infos"):
-        a+=1
-        if a//2 ==0:
-            pass
-        else:
-            st.markdown(text_synopsis,unsafe_allow_html=True)
+    if st.checkbox("+ d'infos"):
+        st.markdown(text_synopsis,unsafe_allow_html=True)
 
 
 with st.expander("Recommandation à partir du Thesaurus"):
