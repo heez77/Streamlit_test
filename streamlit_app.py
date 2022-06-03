@@ -13,6 +13,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 from nltk import word_tokenize
 
+
+st.set_page_config(layout="wide")
+
 fs = s3fs.S3FileSystem(anon=False, key=st.secrets["aws_access_key_id"], secret=st.secrets["aws_secret_access_key"])
 
 
@@ -261,18 +264,6 @@ df_without_weights = get_similar(option, df_similarity)
 titres_without_weights = df_without_weights['Titre similaire'].tolist()
 relevances_without_weights = df_without_weights['relevance'].tolist()
 images_without_weights = get_images(titres_without_weights)
-
-
-
-            
-
-    
-
-
-
-
-
-
 
 
 "WebToon choisi : "
