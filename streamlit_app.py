@@ -201,10 +201,13 @@ def read_file(filename):
     with fs.open(f"systeme-recommandation/Data/{filename}") as f:
         return pd.read_csv(f)
 
-
+@st.cache
+def read_file_synopsis(filename):
+    with fs.open(f"systeme-recommandation/Data/{filename}") as f:
+        return pd.read_csv(f, sep=';')
 
 df = read_file("Thésaurus Krosmoz - Recommandations.csv")
-df_synopsis_base = read_file("descriptions_webtoons.csv")
+df_synopsis_base = read_file_synopsis("descriptions_webtoons.csv")
 df_synopsis = df_synopsis_base.copy()
 df2 = summarize_dataset(df) 
 df3 = compute_df(df2, ['Univers', 'Artistes', 'Genres', 'Support', 'Description'])
