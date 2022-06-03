@@ -1,3 +1,4 @@
+<h3>
 <p>
 Ce système de recommandation se base sur les synopsis de chaque Webtoon. L’objectif pour un WebToon donné, est de trouver les œuvres ayant le synopsis le plus proche de celui de base.
 </p>
@@ -49,3 +50,4 @@ Dans notre cas, les synopsis contiennent beaucoup de mots spécifiques à l’un
 <br>
 Au-delà de ça, cette méthode reste limitée car ne considère pas comme identique les différentes variations d’un même mot. 
 </p>
+</h3>
