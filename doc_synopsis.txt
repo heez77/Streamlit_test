@@ -43,7 +43,7 @@ Pour les autres textes, on obtient :<br>
 <p>
 Et voilà, nous avons convertit nos textes sous une forme mathématique !<br>
 Maintenant, il ne reste plus qu’à étudier la similarité entre les textes. Pour cela, nous allons utiliser la similarité cosinus. Concrètement, nous allons calculer la valeur de l’angle entre les vecteurs représentant deux textes.
-La valeur que nous pouvons obtenir est situé entre 0 et 1, où 1 indique des vecteurs identiques et 0 des vecteurs opposés. Pour plus de détail : [Cosine similarity]( https://kanoki.org/2018/12/27/text-matching-cosine-similarity/)<br>
+La valeur que nous pouvons obtenir est situé entre 0 et 1, où 1 indique des vecteurs identiques et 0 des vecteurs opposés. Pour plus de détail : <a href="Cosine Similarity">https://kanoki.org/2018/12/27/text-matching-cosine-similarity/</a><br>
 Ainsi, pour un texte donné, il suffit de récupérer les autres textes qui ont une similarité la plus proche de 1 possible pour obtenir les textes les plus similaires.
 </p>
 <p>
