@@ -295,7 +295,7 @@ with st.expander("Recommandation à partir du Synopsis"):
         st.image(images_synopsis[4], caption = f"{titres_synopsis[4]}, Relevance : {truncate(relevances_synopsis[4])}")
 
 with st.expander("Documentation recommandation à partir du Synopsis"):
-    st.write(text_synopsis)
+    st.markdown(text_synopsis)
 
 
 with st.expander("Recommandation à partir du Thesaurus"):
