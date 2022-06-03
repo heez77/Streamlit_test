@@ -268,7 +268,7 @@ titres_without_weights = df_without_weights['Titre similaire'].tolist()
 relevances_without_weights = df_without_weights['relevance'].tolist()
 images_without_weights = get_images(titres_without_weights)
 
-
+a = 0
 "WebToon choisi : "
 
 col1, col2, col3, col4, col5 = st.columns(5)
@@ -293,9 +293,12 @@ with st.expander("Recommandation à partir du Synopsis"):
 
     with col5:
         st.image(images_synopsis[4], caption = f"{titres_synopsis[4]}, Relevance : {truncate(relevances_synopsis[4])}")
-
-with st.expander("Documentation recommandation à partir du Synopsis"):
-    st.markdown(text_synopsis,unsafe_allow_html=True)
+    if st.button("+ d'infos"):
+        a+=1
+        if a//2 ==0:
+            pass
+        else:
+            st.markdown(text_synopsis,unsafe_allow_html=True)
 
 
 with st.expander("Recommandation à partir du Thesaurus"):
