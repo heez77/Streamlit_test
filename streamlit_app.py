@@ -255,6 +255,7 @@ def get_images(reco_titres):
 @st.cache(allow_output_mutation=True)
 def count_button():
     a=0
+    return a
 
 a=count_button()
 option = st.sidebar.selectbox(
